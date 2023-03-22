@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+  convert:
+    build: .
+    ports:
+      - '127.0.0.1:3000:3000'
+    networks:
+      - vps_default
+
+networks:
+  vps_default:
+    external: true
