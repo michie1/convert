@@ -2,7 +2,6 @@ import { ChangeEvent, useState } from 'react';
 import Link from 'next/link';
 import useSWR from 'swr';
 import { fetcher } from '../fetcher';
-import Image from 'next/image';
 import RootLayout from './layout';
 import styled from 'styled-components';
 
@@ -53,7 +52,7 @@ export default function HomePage() {
       <button onClick={handleUploadClick}>Upload</button>
       <div>
         {image && (
-          <Image src={image} alt="converted image" width={100} height={100} />
+          <img src={image} alt="converted image" width={100} height={100} />
         )}
         {image && (
           <Link href={image} target="_blank">
