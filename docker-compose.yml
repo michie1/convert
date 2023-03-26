@@ -7,6 +7,8 @@ services:
       - '127.0.0.1:3000:3000'
     networks:
       - vps_default
+    volumes:
+      - /home/michiel/convert/public:/convert/public
 
 networks:
   vps_default:
