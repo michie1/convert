@@ -35,7 +35,9 @@ async function saveFile(file: formidable.File) {
   const newFilePath = `./public/${uuid}/${filename}`;
   await fs.mkdir(`./public/${uuid}`);
   const command = `dcraw -c -w "${file.filepath}" | convert - "${newFilePath}"`;
+  console.log('Start convert');
   const result = await asyncExec(command);
+  console.log('Conversion ended');
   if (result.stderr) {
     throw new Error(`could not execute command: ${result.stderr}`);
   }

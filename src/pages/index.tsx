@@ -32,7 +32,11 @@ export default function HomePage() {
       .then((response) => response.json())
       .then((result) => {
         console.log('Success:', result);
-        setImage(`/${result.uuid}/${result.filename}`);
+        setImage(
+          `${window.location.hostname === 'localhost' ? '' : '/public'}/${
+            result.uuid
+          }/${result.filename}`
+        );
       })
       .catch((error) => {
         console.error('Error:', error);
